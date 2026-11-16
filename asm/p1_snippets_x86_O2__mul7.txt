@@ -1,0 +1,4 @@
+mul7:
+ lea rax, [8*rdi]
+ sub rax, rdi
+ ret

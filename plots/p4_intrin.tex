@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+\begin{axis}[ybar, width=\textwidth, height=6.5cm, bar width=14pt, ymin=0, symbolic x coords={compiler strict,compiler fast-math,NEON intrinsics}, xtick=data, x tick label style={rotate=0, anchor=east, font=\small}, ylabel={ns per element}, enlarge x limits=0.15, legend style={font=\small, at={(0.98,0.98)}, anchor=north east}, nodes near coords, nodes near coords style={font=\tiny}, every node near coord/.append style={/pgf/number format/.cd, fixed, precision=2}]
+\addplot+[error bars/.cd, y dir=both, y explicit] coordinates {(compiler strict,0.9970) +- (0,0.1758) (compiler fast-math,0.3631) +- (0,0.0802) (NEON intrinsics,0.1304) +- (0,0.0131)};
+\end{axis}
+\end{tikzpicture}

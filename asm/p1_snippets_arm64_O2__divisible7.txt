@@ -1,0 +1,9 @@
+divisible7:
+ mov w1, 28087
+ movk w1, 0xb6db, lsl 16
+ mul w0, w0, w1
+ mov w1, 18724
+ movk w1, 0x2492, lsl 16
+ cmp w0, w1
+ cset w0, ls
+ ret

@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+\begin{axis}[width=\textwidth, height=7cm, xmode=log, log basis x=2, xlabel={stride between consecutive loads (bytes)}, ylabel={ns per load}, grid=major, ymin=0,
+  xtick={8,32,128,512,2048,8192}, xticklabels={8,32,128,512,2 Ki,8 Ki}]
+\addplot+[mark=*, thick] coordinates {(8,0.323) (16,0.280) (32,0.444) (64,0.842) (128,4.681) (256,4.729) (512,4.599) (1024,4.560) (2048,4.016) (4096,2.974) (8192,2.536)};
+\draw[dashed, red] (axis cs:128,0) -- (axis cs:128,4.97) node[pos=0.9, right, font=\small] {line = 128 B};
+\end{axis}
+\end{tikzpicture}

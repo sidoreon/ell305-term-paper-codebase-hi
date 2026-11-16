@@ -1,0 +1,13 @@
+mod7:
+ movsxd rcx, edi
+ imul rax, rcx, -1840700269
+ shr rax, 32
+ add eax, ecx
+ mov edx, eax
+ shr edx, 31
+ sar eax, 2
+ add eax, edx
+ lea edx, [8*rax]
+ sub eax, edx
+ add eax, ecx
+ ret

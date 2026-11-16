@@ -1,0 +1,44 @@
+reduce:
+ cmp w1, 0
+ ble L16
+ sub w2, w1, #1
+ cmp w2, 2
+ bls L17
+ movi v3.4s, 0
+ mov x2, x0
+ lsr w3, w1, 2
+ add x3, x0, w3, uxtw 4
+L13:
+ ldr q30, [x2], 16
+ fadd v3.4s, v3.4s, v30.4s
+ cmp x3, x2
+ bne L13
+ faddp v3.4s, v3.4s, v3.4s
+ and w2, w1, -4
+ faddp v3.4s, v3.4s, v3.4s
+ fmov s0, s3
+ cmp w1, w2
+ beq L10
+L12:
+ ldr s2, [x0, w2, uxtw 2]
+ add w3, w2, 1
+ fadd s0, s0, s2
+ cmp w1, w3
+ ble L10
+ add x0, x0, w2, uxtw 2
+ ldr s1, [x0, 4]
+ add w2, w2, 2
+ fadd s0, s0, s1
+ cmp w1, w2
+ ble L10
+ ldr s31, [x0, 8]
+ fadd s0, s0, s31
+L10:
+ ret
+L16:
+ movi v0.2s, #0
+ ret
+L17:
+ movi v0.2s, #0
+ mov w2, 0
+ b L12

@@ -1,0 +1,3 @@
+propagate:
+ lea eax, [rdi + 15]
+ ret

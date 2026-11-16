@@ -1,0 +1,22 @@
+sum_index:
+ push rbp
+ mov rbp, rsp
+ mov qword ptr [rbp - 8], rdi
+ mov dword ptr [rbp - 12], esi
+ mov qword ptr [rbp - 24], 0
+ mov dword ptr [rbp - 28], 0
+ mov eax, dword ptr [rbp - 28]
+ cmp eax, dword ptr [rbp - 12]
+ jge .LBB18_4
+ mov rax, qword ptr [rbp - 8]
+ movsxd rcx, dword ptr [rbp - 28]
+ movsxd rax, dword ptr [rax + 4*rcx]
+ add rax, qword ptr [rbp - 24]
+ mov qword ptr [rbp - 24], rax
+ mov eax, dword ptr [rbp - 28]
+ add eax, 1
+ mov dword ptr [rbp - 28], eax
+ jmp .LBB18_1
+ mov rax, qword ptr [rbp - 24]
+ pop rbp
+ ret

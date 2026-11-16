@@ -1,0 +1,4 @@
+layout,sizeof,bytes_per_array_MiB,ns_per_elem,q1,q3
+wasteful,24,48.0,1.1300,0.9791,1.2826
+reordered,16,32.0,0.7629,0.7500,0.8070
+packed,13,26.0,0.6701,0.6584,0.6991

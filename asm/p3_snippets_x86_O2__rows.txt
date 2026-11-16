@@ -1,0 +1,21 @@
+rows:
+ add rdi, 56
+ xorpd xmm0, xmm0
+ xor eax, eax
+ xor ecx, ecx
+ addsd xmm0, qword ptr [rdi + 8*rcx - 56]
+ addsd xmm0, qword ptr [rdi + 8*rcx - 48]
+ addsd xmm0, qword ptr [rdi + 8*rcx - 40]
+ addsd xmm0, qword ptr [rdi + 8*rcx - 32]
+ addsd xmm0, qword ptr [rdi + 8*rcx - 24]
+ addsd xmm0, qword ptr [rdi + 8*rcx - 16]
+ addsd xmm0, qword ptr [rdi + 8*rcx - 8]
+ addsd xmm0, qword ptr [rdi + 8*rcx]
+ add rcx, 8
+ cmp rcx, 1024
+ jne .LBB0_2
+ inc rax
+ add rdi, 8192
+ cmp rax, 1024
+ jne .LBB0_1
+ ret

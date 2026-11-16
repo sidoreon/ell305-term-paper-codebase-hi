@@ -1,0 +1,13 @@
+dot_c:
+ movi v0.4s, 0
+ mov x2, 0
+L4:
+ ldr q31, [x1, x2]
+ ldr q30, [x0, x2]
+ add x2, x2, 16
+ fmla v0.4s, v31.4s, v30.4s
+ cmp x2, 262144
+ bne L4
+ faddp v0.4s, v0.4s, v0.4s
+ faddp v0.4s, v0.4s, v0.4s
+ ret

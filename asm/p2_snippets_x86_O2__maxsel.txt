@@ -1,0 +1,5 @@
+maxsel:
+ mov eax, esi
+ cmp edi, esi
+ cmovg eax, edi
+ ret

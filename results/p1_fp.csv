@@ -1,0 +1,5 @@
+assoc,(a+b)+c=1,a+(b+c)=0
+sum1e6_0.1f,serial=100958.344,8lanes=99910.3203,exact=100000
+recip_mismatch,1399304,of,4194304,max_ulp,1.00
+timing,div,0.2897,0.2761,0.2950
+timing,recip,0.2506,0.2490,0.2589

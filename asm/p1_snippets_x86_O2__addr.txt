@@ -1,0 +1,3 @@
+addr:
+ mov rax, qword ptr [rdi + 8*rsi + 24]
+ ret

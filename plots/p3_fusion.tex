@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+\begin{axis}[ybar, width=\textwidth, height=6.5cm, bar width=14pt, ymin=0, symbolic x coords={two loops,fused loop,eight streams,four plus four}, xtick=data, x tick label style={rotate=0, anchor=east, font=\small}, ylabel={ns per element}, enlarge x limits=0.08, legend style={font=\small, at={(0.98,0.98)}, anchor=north east}, nodes near coords, nodes near coords style={font=\tiny}, every node near coord/.append style={/pgf/number format/.cd, fixed, precision=2}]
+\addplot+[error bars/.cd, y dir=both, y explicit] coordinates {(two loops,0.4713) +- (0,0.0187) (fused loop,1.3009) +- (0,0.0091) (eight streams,0.8249) +- (0,0.0108) (four plus four,1.1603) +- (0,0.0020)};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,8 @@
+p4_vec.c:10:46: optimized:  loop versioned for vectorization because of possible aliasing
+p4_vec.c:10:46: optimized: loop vectorized using 16 byte vectors
+p4_vec.c:11:46: optimized:  loop versioned for vectorization because of possible aliasing
+p4_vec.c:11:46: optimized: loop vectorized using 16 byte vectors
+p4_vec.c:12:46: optimized:  loop versioned for vectorization because of possible aliasing
+p4_vec.c:12:46: optimized: loop vectorized using 16 byte vectors
+p4_vec.c:13:46: optimized:  loop versioned for vectorization because of possible aliasing
+p4_vec.c:13:46: optimized: loop vectorized using 16 byte vectors

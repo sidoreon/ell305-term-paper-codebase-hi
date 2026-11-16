@@ -1,0 +1,52 @@
+branchy:
+ test esi, esi
+ jle .LBB0_1
+ mov ecx, esi
+ xor edx, edx
+ cmp esi, 3
+ ja .LBB0_5
+ xor esi, esi
+ xor eax, eax
+ jmp .LBB0_8
+ xor eax, eax
+ ret
+ mov esi, ecx
+ and esi, 2147483644
+ mov eax, ecx
+ shr eax, 2
+ and eax, 536870911
+ shl rax, 4
+ pxor xmm0, xmm0
+ xor r8d, r8d
+ movdqa xmm3, xmmword ptr [rip + .LCPI0_0] # xmm3 = [127,127,u,u]
+ pxor xmm2, xmm2
+ pxor xmm1, xmm1
+ movq xmm4, qword ptr [rdi + r8]      # xmm4 = mem[0],zero
+ movq xmm5, qword ptr [rdi + r8 + 8]  # xmm5 = mem[0],zero
+ movdqa xmm6, xmm4
+ pcmpgtd xmm6, xmm3
+ movdqa xmm7, xmm5
+ pcmpgtd xmm7, xmm3
+ pand xmm6, xmm4
+ pand xmm7, xmm5
+ punpckldq xmm6, xmm0              # xmm6 = xmm6[0],xmm0[0],xmm6[1],xmm0[1]
+ paddq xmm2, xmm6
+ punpckldq xmm7, xmm0              # xmm7 = xmm7[0],xmm0[0],xmm7[1],xmm0[1]
+ paddq xmm1, xmm7
+ add r8, 16
+ cmp rax, r8
+ jne .LBB0_6
+ paddq xmm1, xmm2
+ pshufd xmm0, xmm1, 238                 # xmm0 = xmm1[2,3,2,3]
+ paddq xmm0, xmm1
+ movq rax, xmm0
+ cmp esi, ecx
+ je .LBB0_2
+ mov r8d, dword ptr [rdi + 4*rsi]
+ cmp r8d, 127
+ cmovle r8d, edx
+ add rax, r8
+ inc rsi
+ cmp rcx, rsi
+ jne .LBB0_8
+ ret

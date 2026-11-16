@@ -1,0 +1,5 @@
+stream,dispatch,ns_per_op,q1,q3
+pattern,switch,0.9952,0.8232,1.5435
+pattern,goto,0.3669,0.3447,0.3747
+random,switch,4.2873,4.2480,4.3320
+random,goto,5.2334,5.2323,5.2455

@@ -1,0 +1,12 @@
+slp:
+ ldp s25, s27, [x1]
+ ldp s24, s26, [x2]
+ fadd s24, s25, s24
+ fadd s26, s27, s26
+ stp s24, s26, [x0]
+ ldp s29, s31, [x1, 8]
+ ldp s28, s30, [x2, 8]
+ fadd s28, s29, s28
+ fadd s30, s31, s30
+ stp s28, s30, [x0, 8]
+ ret

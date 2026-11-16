@@ -1,0 +1,19 @@
+branchy:
+ cmp w1, 0
+ ble L5
+ mov x2, x0
+ add x1, x0, w1, uxtw 2
+ mov x0, 0
+L4:
+ ldr w3, [x2]
+ cmp w3, 127
+ ble L3
+ add x0, x0, w3, sxtw
+L3:
+ add x2, x2, 4
+ cmp x2, x1
+ bne L4
+ ret
+L5:
+ mov x0, 0
+ ret

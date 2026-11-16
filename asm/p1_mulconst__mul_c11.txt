@@ -1,0 +1,15 @@
+mul_c11:
+ mov x3, 61568
+ mov x1, 0
+ mov x0, 1
+ movk x3, 0x2fa, lsl 16
+L22:
+ add x2, x0, x0, lsl 2
+ add x0, x0, x2, lsl 1
+ add x0, x0, x1
+ add x1, x1, 1
+ cmp x1, x3
+ bne L22
+ adrp x1, _sink@PAGE
+ str x0, [x1, #_sink@PAGEOFF]
+ ret

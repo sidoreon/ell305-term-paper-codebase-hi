@@ -1,0 +1,15 @@
+rows:
+ movi d0, #0
+ add x1, x0, 8192
+ add x2, x0, 8396800
+L2:
+ sub x0, x1, #8192
+L3:
+ ldr d31, [x0], 8
+ fadd d0, d0, d31
+ cmp x0, x1
+ bne L3
+ add x1, x0, 8192
+ cmp x1, x2
+ bne L2
+ ret

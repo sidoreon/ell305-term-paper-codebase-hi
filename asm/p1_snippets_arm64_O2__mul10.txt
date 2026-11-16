@@ -1,0 +1,4 @@
+mul10:
+ add x0, x0, x0, lsl 2
+ lsl x0, x0, 1
+ ret

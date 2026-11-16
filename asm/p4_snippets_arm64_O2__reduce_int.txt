@@ -1,0 +1,15 @@
+reduce_int:
+ cmp w1, 0
+ ble L15
+ mov x2, x0
+ add x1, x0, w1, uxtw 2
+ mov w0, 0
+L14:
+ ldr w3, [x2], 4
+ add w0, w0, w3
+ cmp x2, x1
+ bne L14
+ ret
+L15:
+ mov w0, 0
+ ret

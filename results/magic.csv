@@ -1,0 +1,12 @@
+d,m_hex,shift,fixup
+3,0xAAAAAAAB,1,no
+5,0xCCCCCCCD,2,no
+6,0xAAAAAAAB,2,no
+7,0x124924925,3,yes
+9,0x38E38E39,1,no
+10,0xCCCCCCCD,3,no
+11,0xBA2E8BA3,3,no
+13,0x4EC4EC4F,2,no
+100,0x51EB851F,5,no
+unsigned_div7_mismatches,0,random1e6
+signed_div7_mismatches,0,random2e6

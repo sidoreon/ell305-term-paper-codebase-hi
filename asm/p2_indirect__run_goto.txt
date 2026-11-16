@@ -1,0 +1,84 @@
+run_goto:
+ adrp x0, _ops@PAGE
+ adrp x4, _tab.0@PAGE
+ ldr x5, [x0, #_ops@PAGEOFF]
+ add x4, x4, _tab.0@PAGEOFF;
+ mov x1, 0
+ mov x2, 0
+ mov x6, 5
+ ldrb w0, [x5]
+ ldr x3, [x4, w0, sxtw 3]
+ mov w0, 1
+ br x3
+L20:
+ add x2, x2, 1
+ cmp w0, 4194304
+ beq L22
+L52:
+ ldrb w3, [x5, w0, sxtw]
+ add x1, x1, 1
+ add w0, w0, 1
+ ldr x3, [x4, w3, sxtw 3]
+ br x3
+L30:
+ add x2, x2, 7
+ cmp w0, 4194304
+ bne L52
+L22:
+ adrp x0, _lsink@PAGE
+ str x2, [x0, #_lsink@PAGEOFF]
+ ret
+L28:
+ orr x2, x2, x6
+ cmp w0, 4194304
+ beq L22
+ ldrb w3, [x5, w0, sxtw]
+ add x1, x1, 1
+ add w0, w0, 1
+ ldr x3, [x4, w3, sxtw 3]
+ br x3
+L26:
+ add x2, x2, x1
+ cmp w0, 4194304
+ beq L22
+ ldrb w3, [x5, w0, sxtw]
+ add x1, x1, 1
+ add w0, w0, 1
+ ldr x3, [x4, w3, sxtw 3]
+ br x3
+L25:
+ eor x2, x2, 3
+ cmp w0, 4194304
+ beq L22
+ ldrb w3, [x5, w0, sxtw]
+ add x1, x1, 1
+ add w0, w0, 1
+ ldr x3, [x4, w3, sxtw 3]
+ br x3
+L24:
+ sub x2, x2, #2
+ cmp w0, 4194304
+ beq L22
+ ldrb w3, [x5, w0, sxtw]
+ add x1, x1, 1
+ add w0, w0, 1
+ ldr x3, [x4, w3, sxtw 3]
+ br x3
+L27:
+ lsl x2, x2, 1
+ cmp w0, 4194304
+ beq L22
+ ldrb w3, [x5, w0, sxtw]
+ add x1, x1, 1
+ add w0, w0, 1
+ ldr x3, [x4, w3, sxtw 3]
+ br x3
+L29:
+ sub x2, x2, x1
+ cmp w0, 4194304
+ beq L22
+ ldrb w3, [x5, w0, sxtw]
+ add x1, x1, 1
+ add w0, w0, 1
+ ldr x3, [x4, w3, sxtw 3]
+ br x3

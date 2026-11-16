@@ -1,0 +1,122 @@
+p4_costmodel.c:6:1: note: vectorized 0 loops in function.
+p4_costmodel.c:6:1: note: ***** Analysis failed with vector mode V4SF
+p4_costmodel.c:6:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+p4_costmodel.c:7:1: note: vectorized 0 loops in function.
+p4_costmodel.c:7:1: note: ***** Analysis succeeded with vector mode V4SF
+p4_costmodel.c:7:1: note: SLPing BB part
+p4_costmodel.c:7:1: note: Costing subgraph: 
+p4_costmodel.c:7:1: note: node 0x7f0880008 (max_nunits=2, refcnt=1) vector(2) float
+p4_costmodel.c:7:1: note: op template: *a_12(D) = _23;
+p4_costmodel.c:7:1: note: 	stmt 0 *a_12(D) = _23;
+p4_costmodel.c:7:1: note: 	stmt 1 MEM[(float *)a_12(D) + 4B] = _34;
+p4_costmodel.c:7:1: note: 	children 0x7f0880098
+p4_costmodel.c:7:1: note: node 0x7f0880098 (max_nunits=2, refcnt=1) vector(2) float
+p4_costmodel.c:7:1: note: op template: _23 = _21 + 1.0e+0;
+p4_costmodel.c:7:1: note: 	stmt 0 _23 = _21 + 1.0e+0;
+p4_costmodel.c:7:1: note: 	stmt 1 _34 = _32 + 1.0e+0;
+p4_costmodel.c:7:1: note: 	children 0x7f0880128 0x7f08802d8
+p4_costmodel.c:7:1: note: node 0x7f0880128 (max_nunits=2, refcnt=1) vector(2) float
+p4_costmodel.c:7:1: note: op template: _21 = _20 * 2.0e+0;
+p4_costmodel.c:7:1: note: 	stmt 0 _21 = _20 * 2.0e+0;
+p4_costmodel.c:7:1: note: 	stmt 1 _32 = _31 * 2.0e+0;
+p4_costmodel.c:7:1: note: 	children 0x7f08801b8 0x7f0880248
+p4_costmodel.c:7:1: note: node 0x7f08801b8 (max_nunits=2, refcnt=1) const vector(2) float
+p4_costmodel.c:7:1: note: op template: _20 = *b_11(D);
+p4_costmodel.c:7:1: note: 	stmt 0 _20 = *b_11(D);
+p4_costmodel.c:7:1: note: 	stmt 1 _31 = MEM[(const float *)b_11(D) + 4B];
+p4_costmodel.c:7:1: note: node (constant) 0x7f0880248 (max_nunits=1, refcnt=1) const vector(2) float
+p4_costmodel.c:7:1: note: 	{ 2.0e+0, 2.0e+0 }
+p4_costmodel.c:7:1: note: node (constant) 0x7f08802d8 (max_nunits=1, refcnt=1) vector(2) float
+p4_costmodel.c:7:1: note: 	{ 1.0e+0, 1.0e+0 }
+p4_costmodel.c:7:1: note: Cost model analysis: 
+p4_costmodel.c:7:1: note: Cost model analysis for part in loop 0:
+  Vector cost: 6
+  Scalar cost: 6
+p4_costmodel.c:7:1: note: Basic block will be vectorized using SLP
+p4_costmodel.c:7:1: optimized: basic block part vectorized using 8 byte vectors
+p4_costmodel.c:7:1: note: Vectorizing SLP tree:
+p4_costmodel.c:7:1: note: node 0x7f0880008 (max_nunits=2, refcnt=1) vector(2) float
+p4_costmodel.c:7:1: note: op template: *a_12(D) = _23;
+p4_costmodel.c:7:1: note: 	stmt 0 *a_12(D) = _23;
+p4_costmodel.c:7:1: note: 	stmt 1 MEM[(float *)a_12(D) + 4B] = _34;
+p4_costmodel.c:7:1: note: 	children 0x7f0880098
+p4_costmodel.c:7:1: note: node 0x7f0880098 (max_nunits=2, refcnt=1) vector(2) float
+p4_costmodel.c:7:1: note: op template: _23 = _21 + 1.0e+0;
+p4_costmodel.c:7:1: note: 	stmt 0 _23 = _21 + 1.0e+0;
+p4_costmodel.c:7:1: note: 	stmt 1 _34 = _32 + 1.0e+0;
+p4_costmodel.c:7:1: note: 	children 0x7f0880128 0x7f08802d8
+p4_costmodel.c:7:1: note: node 0x7f0880128 (max_nunits=2, refcnt=1) vector(2) float
+p4_costmodel.c:7:1: note: op template: _21 = _20 * 2.0e+0;
+p4_costmodel.c:7:1: note: 	stmt 0 _21 = _20 * 2.0e+0;
+p4_costmodel.c:7:1: note: 	stmt 1 _32 = _31 * 2.0e+0;
+p4_costmodel.c:7:1: note: 	children 0x7f08801b8 0x7f0880248
+p4_costmodel.c:7:1: note: node 0x7f08801b8 (max_nunits=2, refcnt=1) const vector(2) float
+p4_costmodel.c:7:1: note: op template: _20 = *b_11(D);
+p4_costmodel.c:7:1: note: 	stmt 0 _20 = *b_11(D);
+p4_costmodel.c:7:1: note: 	stmt 1 _31 = MEM[(const float *)b_11(D) + 4B];
+p4_costmodel.c:7:1: note: node (constant) 0x7f0880248 (max_nunits=1, refcnt=1) const vector(2) float
+p4_costmodel.c:7:1: note: 	{ 2.0e+0, 2.0e+0 }
+p4_costmodel.c:7:1: note: node (constant) 0x7f08802d8 (max_nunits=1, refcnt=1) vector(2) float
+p4_costmodel.c:7:1: note: 	{ 1.0e+0, 1.0e+0 }
+p4_costmodel.c:7:1: note: ------>vectorizing SLP node starting from: _20 = *b_11(D);
+p4_costmodel.c:7:1: note: transform load. ncopies = 1
+p4_costmodel.c:7:1: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *b_11(D)
+p4_costmodel.c:7:1: note: created vectp.19_33
+p4_costmodel.c:7:1: note: add new stmt: vect__20.20_30 = MEM <const vector(2) float> [(const float *)vectp.19_33];
+p4_costmodel.c:7:1: note: ------>vectorizing SLP node starting from: _21 = _20 * 2.0e+0;
+p4_costmodel.c:7:1: note: vect_is_simple_use: operand *b_11(D), type of def: internal
+p4_costmodel.c:7:1: note: transform binary/unary operation.
+p4_costmodel.c:7:1: note: add new stmt: vect__21.21_36 = vect__20.20_30 * { 2.0e+0, 2.0e+0 };
+p4_costmodel.c:7:1: note: ------>vectorizing SLP node starting from: _23 = _21 + 1.0e+0;
+p4_costmodel.c:7:1: note: vect_is_simple_use: operand _20 * 2.0e+0, type of def: internal
+p4_costmodel.c:7:1: note: transform binary/unary operation.
+p4_costmodel.c:7:1: note: add new stmt: vect__23.22_29 = vect__21.21_36 + { 1.0e+0, 1.0e+0 };
+p4_costmodel.c:7:1: note: ------>vectorizing SLP node starting from: *a_12(D) = _23;
+p4_costmodel.c:7:1: note: vect_is_simple_use: operand _21 + 1.0e+0, type of def: internal
+p4_costmodel.c:7:1: note: vect_is_simple_use: operand _32 + 1.0e+0, type of def: internal
+p4_costmodel.c:7:1: note: transform store. ncopies = 1
+p4_costmodel.c:7:1: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *a_12(D)
+p4_costmodel.c:7:1: note: created vectp.24_28
+p4_costmodel.c:7:1: note: add new stmt: MEM <vector(2) float> [(float *)vectp.24_28] = vect__23.22_29;
+p4_costmodel.c:7:1: note: vectorizing stmts using SLP.
+p4_costmodel.c:7:1: note: ***** The result for vector mode V16QI would be the same
+p4_costmodel.c:7:1: note: ***** The result for vector mode V8QI would be the same
+p4_costmodel.c:7:1: note: ***** The result for vector mode V4HI would be the same
+p4_costmodel.c:8:1: missed: couldn't vectorize loop
+p4_costmodel.c:8:1: missed: Loop costings not worthwhile.
+p4_costmodel.c:8:1: note: vectorized 0 loops in function.
+p4_costmodel.c:8:1: note: ***** Analysis failed with vector mode V4SF
+p4_costmodel.c:8:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+p4_costmodel.c:9:1: optimized: loop vectorized using 16 byte vectors
+p4_costmodel.c:9:1: note: vectorized 1 loops in function.
+p4_costmodel.c:9:1: note: ***** Analysis failed with vector mode VOID
+p4_costmodel.c:10:1: optimized: loop vectorized using 16 byte vectors
+p4_costmodel.c:10:1: note: vectorized 1 loops in function.
+p4_costmodel.c:10:1: note: ***** Analysis failed with vector mode V4SF
+p4_costmodel.c:10:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+p4_costmodel.c:11:1: missed: couldn't vectorize loop
+p4_costmodel.c:11:1: missed: Loop costings not worthwhile.
+p4_costmodel.c:11:1: note: vectorized 0 loops in function.
+p4_costmodel.c:11:1: note: ***** Analysis failed with vector mode V4SF
+p4_costmodel.c:11:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+p4_costmodel.c:12:1: missed: couldn't vectorize loop
+p4_costmodel.c:12:1: missed: Loop costings not worthwhile.
+p4_costmodel.c:12:1: note: vectorized 0 loops in function.
+p4_costmodel.c:12:1: note: ***** Analysis failed with vector mode V4SF
+p4_costmodel.c:12:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+p4_costmodel.c:13:1: optimized: loop vectorized using 16 byte vectors
+p4_costmodel.c:13:1: note: vectorized 1 loops in function.
+p4_costmodel.c:13:1: note: ***** Analysis failed with vector mode VOID
+p4_costmodel.c:14:1: optimized: loop vectorized using 16 byte vectors
+p4_costmodel.c:14:1: note: vectorized 1 loops in function.
+p4_costmodel.c:14:1: note: ***** Analysis failed with vector mode VOID
+p4_costmodel.c:15:1: optimized: loop vectorized using 16 byte vectors
+p4_costmodel.c:15:1: note: vectorized 1 loops in function.
+p4_costmodel.c:15:1: note: ***** Analysis failed with vector mode VOID
+p4_costmodel.c:16:1: optimized: loop vectorized using 16 byte vectors
+p4_costmodel.c:16:1: note: vectorized 1 loops in function.
+p4_costmodel.c:16:1: note: ***** Analysis failed with vector mode VOID
+p4_costmodel.c:17:1: optimized: loop vectorized using 16 byte vectors
+p4_costmodel.c:17:1: note: vectorized 1 loops in function.
+p4_costmodel.c:17:1: note: ***** Analysis failed with vector mode VOID
+p4_costmodel.c:18:5: note: ***** Analysis failed with vector mode VOID

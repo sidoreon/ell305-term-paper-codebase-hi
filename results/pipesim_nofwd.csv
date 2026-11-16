@@ -1,0 +1,7 @@
+trace,forwarding,penalty,instrs,cycles,cpi,data_stalls,control_stalls
+traces/pipe_chain.txt,0,2,1000,3002,3.002,1998,0
+traces/pipe_indep.txt,0,2,1000,1004,1.004,0,0
+traces/pipe_loaduse_sched.txt,0,2,1000,1254,1.254,250,0
+traces/pipe_loaduse.txt,0,2,1000,2004,2.004,1000,0
+traces/pipe_loop_unroll4.txt,0,2,550,1154,2.098,500,100
+traces/pipe_loop.txt,0,2,1000,2604,2.604,1200,400

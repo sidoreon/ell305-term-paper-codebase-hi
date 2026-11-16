@@ -1,0 +1,12 @@
+reduce:
+ movi v0.2s, #0
+ cmp w1, 0
+ ble L10
+ add x1, x0, w1, uxtw 2
+L12:
+ ldr s31, [x0], 4
+ fadd s0, s0, s31
+ cmp x1, x0
+ bne L12
+L10:
+ ret

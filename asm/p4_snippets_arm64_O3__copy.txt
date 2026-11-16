@@ -1,0 +1,7 @@
+copy:
+ cmp w2, 0
+ ble L38
+ ubfiz x2, x2, 2, 32
+ b _memcpy
+L38:
+ ret

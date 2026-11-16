@@ -1,0 +1,15 @@
+sum_index:
+ cmp w1, 0
+ ble L23
+ mov x2, x0
+ add x1, x0, w1, uxtw 2
+ mov x0, 0
+L22:
+ ldrsw x3, [x2], 4
+ add x0, x0, x3
+ cmp x2, x1
+ bne L22
+ ret
+L23:
+ mov x0, 0
+ ret

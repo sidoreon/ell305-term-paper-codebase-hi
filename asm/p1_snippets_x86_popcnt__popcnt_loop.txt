@@ -1,0 +1,3 @@
+popcnt_loop:
+ popcnt eax, edi
+ ret

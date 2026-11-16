@@ -1,0 +1,4 @@
+div8_unsigned:
+ mov eax, edi
+ shr eax, 3
+ ret

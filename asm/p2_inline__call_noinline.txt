@@ -1,0 +1,18 @@
+call_noinline:
+ adrp x0, _a@PAGE
+ stp x29, x30, [sp, -16]!
+ mov x29, sp
+ mov x3, 16777216
+ mov x2, 0
+ ldr x1, [x0, #_a@PAGEOFF]
+ add x3, x1, x3
+L5:
+ ldr w0, [x1], 4
+ bl _f_noinline
+ add x2, x2, w0, sxtw
+ cmp x3, x1
+ bne L5
+ adrp x0, _lsink@PAGE
+ ldp x29, x30, [sp], 16
+ str x2, [x0, #_lsink@PAGEOFF]
+ ret

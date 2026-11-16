@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+\begin{axis}[width=\textwidth, height=6.5cm, ymode=log, xmode=log, log basis x=2, xlabel={threads}, ylabel={time to sum 64 M integers (ms)}, grid=major, xtick={1,2,4,8}, xticklabels={1,2,4,8}, legend pos=north west, legend style={font=\small}]
+\addplot+[mark=*, thick] coordinates {(1,113.59) (2,360.06) (4,542.70) (8,1252.80)};
+\addlegendentry{one shared atomic counter}
+\addplot+[mark=square*, thick] coordinates {(1,15.63) (2,7.97) (4,4.37) (8,3.02)};
+\addlegendentry{private partial sums}
+\end{axis}
+\end{tikzpicture}

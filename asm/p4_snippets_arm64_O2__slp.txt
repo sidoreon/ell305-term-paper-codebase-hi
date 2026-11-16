@@ -1,0 +1,6 @@
+slp:
+ ldr q31, [x1]
+ ldr q30, [x2]
+ fadd v30.4s, v31.4s, v30.4s
+ str q30, [x0]
+ ret

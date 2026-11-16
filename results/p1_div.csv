@@ -1,0 +1,11 @@
+variant,ns_per_elem,q1,q3
+const_signed,0.3698,0.3659,0.3733
+runtime_signed,0.4696,0.4660,0.4718
+const_unsigned,0.3751,0.3740,0.3786
+runtime_unsigned,0.4699,0.4685,0.4728
+pow2_signed,0.2662,0.2654,0.2679
+pow2_unsigned,0.2370,0.2365,0.2384
+mod7_signed,0.4764,0.4731,0.4961
+divisible7,0.2845,0.2833,0.2856
+chain_const,1.3635,1.3628,1.3667
+chain_runtime,2.2698,2.2694,2.2730

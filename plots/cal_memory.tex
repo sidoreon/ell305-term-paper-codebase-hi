@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[xmode=log, log basis x=2, width=\textwidth, height=7.5cm, xlabel={working set (bytes)}, ylabel={latency per load (ns)},
+  grid=major, xtick={4096,65536,1048576,16777216,268435456}, xticklabels={4 KiB,64 KiB,1 MiB,16 MiB,256 MiB}, ymin=0,
+  legend pos=north west, legend style={font=\small}]
+\addplot+[mark=*, mark size=1.5pt, thick, error bars/.cd, y dir=both, y explicit] coordinates {(4096,0.683) +- (0,0.002) (8192,0.682) +- (0,0.001) (16384,0.682) +- (0,0.002) (32768,0.682) +- (0,0.001) (65536,0.682) +- (0,0.001) (131072,0.682) +- (0,0.001) (262144,2.923) +- (0,0.004) (524288,2.954) +- (0,0.004) (1048576,4.464) +- (0,0.034) (2097152,6.576) +- (0,0.069) (4194304,7.127) +- (0,0.014) (8388608,7.742) +- (0,0.056) (16777216,14.848) +- (0,0.381) (33554432,47.271) +- (0,2.577) (67108864,69.346) +- (0,0.154) (134217728,78.423) +- (0,0.305) (268435456,82.632) +- (0,0.525)};
+\addlegendentry{pointer chase, random order}
+\draw[dashed, red] (axis cs:131072,0) -- (axis cs:131072,90) node[pos=0.55, right, font=\small] {L1 128 KiB};
+\draw[dashed, red] (axis cs:16777216,0) -- (axis cs:16777216,90) node[pos=0.45, right, font=\small] {L2 16 MiB};
+\end{axis}
+\end{tikzpicture}

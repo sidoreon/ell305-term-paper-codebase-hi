@@ -1,0 +1,5 @@
+trip4:
+ ldr q31, [x1]
+ fadd v31.4s, v31.4s, v31.4s
+ str q31, [x0]
+ ret

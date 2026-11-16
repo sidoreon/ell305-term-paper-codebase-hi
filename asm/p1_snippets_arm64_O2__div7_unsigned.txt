@@ -1,0 +1,9 @@
+div7_unsigned:
+ mov w1, 18725
+ movk w1, 0x2492, lsl 16
+ umull x1, w0, w1
+ lsr x1, x1, 32
+ sub w0, w0, w1
+ add w0, w1, w0, lsr 1
+ lsr w0, w0, 2
+ ret

@@ -1,0 +1,5 @@
+variant,ns_per_elem,q1,q3
+popcount_loop,10.1445,10.1198,11.8474
+popcount_kernighan,0.4507,0.4481,0.4508
+popcount_builtin,0.4483,0.4481,0.4507
+bswap_manual,0.4507,0.4481,0.4507

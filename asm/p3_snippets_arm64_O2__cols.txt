@@ -1,0 +1,17 @@
+cols:
+ movi d0, #0
+ add x1, x0, 8388608
+ mov w2, 0
+L8:
+ sub x0, x1, #8388608
+L9:
+ ldr d31, [x0]
+ add x0, x0, 8192
+ fadd d0, d0, d31
+ cmp x1, x0
+ bne L9
+ add w2, w2, 1
+ add x1, x1, 8
+ cmp w2, 1024
+ bne L8
+ ret

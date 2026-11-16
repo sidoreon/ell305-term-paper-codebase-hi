@@ -1,0 +1,8 @@
+p4_vec.c:10:46: missed: couldn't vectorize loop
+p4_vec.c:10:46: missed: would need a runtime alias check
+p4_vec.c:11:46: missed: couldn't vectorize loop
+p4_vec.c:11:46: missed: would need a runtime alias check
+p4_vec.c:12:46: missed: couldn't vectorize loop
+p4_vec.c:12:46: missed: would need a runtime alias check
+p4_vec.c:13:46: missed: couldn't vectorize loop
+p4_vec.c:13:46: missed: would need a runtime alias check

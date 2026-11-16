@@ -1,0 +1,4 @@
+f_noinline:
+ add w0, w0, w0, lsl 1
+ add w0, w0, 1
+ ret

@@ -1,0 +1,8 @@
+trip3:
+ ldr d30, [x1]
+ ldr s31, [x1, 8]
+ fadd v30.2s, v30.2s, v30.2s
+ fadd s31, s31, s31
+ str d30, [x0]
+ str s31, [x0, 8]
+ ret

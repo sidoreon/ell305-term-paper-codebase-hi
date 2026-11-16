@@ -1,0 +1,59 @@
+saxpy:
+ test edx, edx
+ jle .LBB0_13
+ mov eax, edx
+ cmp edx, 4
+ jae .LBB0_3
+ xor ecx, ecx
+ jmp .LBB0_12
+ cmp edx, 32
+ jae .LBB0_5
+ xor ecx, ecx
+ jmp .LBB0_9
+ mov ecx, eax
+ and ecx, 2147483616
+ vbroadcastss ymm1, xmm0
+ mov edx, eax
+ shr edx, 5
+ and edx, 67108863
+ shl rdx, 7
+ xor r8d, r8d
+ vmulps ymm2, ymm1, ymmword ptr [rsi + r8]
+ vaddps ymm2, ymm2, ymmword ptr [rdi + r8]
+ vmulps ymm3, ymm1, ymmword ptr [rsi + r8 + 32]
+ vaddps ymm3, ymm3, ymmword ptr [rdi + r8 + 32]
+ vmulps ymm4, ymm1, ymmword ptr [rsi + r8 + 64]
+ vaddps ymm4, ymm4, ymmword ptr [rdi + r8 + 64]
+ vmulps ymm5, ymm1, ymmword ptr [rsi + r8 + 96]
+ vaddps ymm5, ymm5, ymmword ptr [rdi + r8 + 96]
+ vmovups ymmword ptr [rdi + r8], ymm2
+ vmovups ymmword ptr [rdi + r8 + 32], ymm3
+ vmovups ymmword ptr [rdi + r8 + 64], ymm4
+ vmovups ymmword ptr [rdi + r8 + 96], ymm5
+ sub r8, -128
+ cmp rdx, r8
+ jne .LBB0_6
+ cmp ecx, eax
+ je .LBB0_13
+ test al, 28
+ je .LBB0_12
+ mov rdx, rcx
+ mov ecx, eax
+ and ecx, 2147483644
+ vbroadcastss xmm1, xmm0
+ vmulps xmm2, xmm1, xmmword ptr [rsi + 4*rdx]
+ vaddps xmm2, xmm2, xmmword ptr [rdi + 4*rdx]
+ vmovups xmmword ptr [rdi + 4*rdx], xmm2
+ add rdx, 4
+ cmp rcx, rdx
+ jne .LBB0_10
+ cmp ecx, eax
+ je .LBB0_13
+ vmulss xmm1, xmm0, dword ptr [rsi + 4*rcx]
+ vaddss xmm1, xmm1, dword ptr [rdi + 4*rcx]
+ vmovss dword ptr [rdi + 4*rcx], xmm1
+ inc rcx
+ cmp rax, rcx
+ jne .LBB0_12
+ vzeroupper
+ ret

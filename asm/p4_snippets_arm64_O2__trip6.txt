@@ -1,0 +1,8 @@
+trip6:
+ ldr q30, [x1]
+ ldr d31, [x1, 16]
+ fadd v30.4s, v30.4s, v30.4s
+ fadd v31.2s, v31.2s, v31.2s
+ str q30, [x0]
+ str d31, [x0, 16]
+ ret

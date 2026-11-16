@@ -1,0 +1,16 @@
+call_inline:
+ adrp x0, _a@PAGE
+ mov x3, 16777216
+ ldr x1, [x0, #_a@PAGEOFF]
+ mov x2, 0
+ add x3, x1, x3
+L9:
+ ldr w0, [x1], 4
+ add w0, w0, w0, lsl 1
+ add w0, w0, 1
+ add x2, x2, w0, sxtw
+ cmp x3, x1
+ bne L9
+ adrp x0, _lsink@PAGE
+ str x2, [x0, #_lsink@PAGEOFF]
+ ret

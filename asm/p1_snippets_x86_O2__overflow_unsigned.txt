@@ -1,0 +1,38 @@
+overflow_unsigned:
+ test esi, esi
+ je .LBB20_1
+ mov ecx, esi
+ cmp esi, 7
+ ja .LBB20_4
+ xor edx, edx
+ xor eax, eax
+ jmp .LBB20_7
+ xor eax, eax
+ ret
+ mov edx, ecx
+ and edx, -8
+ lea rax, [4*rcx]
+ and rax, -32
+ pxor xmm0, xmm0
+ xor esi, esi
+ pxor xmm1, xmm1
+ movdqu xmm2, xmmword ptr [rdi + rsi]
+ paddd xmm0, xmm2
+ movdqu xmm2, xmmword ptr [rdi + rsi + 16]
+ paddd xmm1, xmm2
+ add rsi, 32
+ cmp rax, rsi
+ jne .LBB20_5
+ paddd xmm1, xmm0
+ pshufd xmm0, xmm1, 238                 # xmm0 = xmm1[2,3,2,3]
+ paddd xmm0, xmm1
+ pshufd xmm1, xmm0, 85                  # xmm1 = xmm0[1,1,1,1]
+ paddd xmm1, xmm0
+ movd eax, xmm1
+ cmp edx, ecx
+ je .LBB20_8
+ add eax, dword ptr [rdi + 4*rdx]
+ inc rdx
+ cmp rcx, rdx
+ jne .LBB20_7
+ ret

@@ -1,0 +1,9 @@
+trace,size,assoc,line,accesses,hits,compulsory,capacity,conflict,miss_rate
+traces/cache_alias_padded.txt,131072,8,128,16384,15352,1032,0,0,0.0630
+traces/cache_alias_pow2.txt,131072,8,128,16384,0,1024,0,15360,1.0000
+traces/cache_aos.txt,131072,8,128,65536,32768,32768,0,0,0.5000
+traces/cache_colmajor.txt,131072,8,128,262144,0,16384,0,245760,1.0000
+traces/cache_mm_ijk.txt,131072,8,128,786432,785664,768,0,0,0.0010
+traces/cache_mm_ikj.txt,131072,8,128,786432,785664,768,0,0,0.0010
+traces/cache_rowmajor.txt,131072,8,128,262144,245760,16384,0,0,0.0625
+traces/cache_soa.txt,131072,8,128,65536,63488,2048,0,0,0.0312

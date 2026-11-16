@@ -1,0 +1,6 @@
+divisible7:
+ imul ecx, edi, -1227133513
+ xor eax, eax
+ cmp ecx, 613566757
+ setb al
+ ret

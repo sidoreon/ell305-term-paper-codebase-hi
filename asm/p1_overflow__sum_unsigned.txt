@@ -1,0 +1,11 @@
+sum_unsigned.constprop.0:
+ mov x2, 16777216
+ add x1, x0, 4
+ add x3, x0, x2
+ mov x0, 0
+L4:
+ ldrsw x2, [x1], 4
+ add x0, x0, x2
+ cmp x1, x3
+ bne L4
+ ret

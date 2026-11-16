@@ -1,0 +1,143 @@
+bench.h:32:20: note: ***** Analysis failed with vector mode V2DF
+bench.h:32:20: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DF
+p4_ladder.c:12:82: optimized: loop vectorized using 16 byte vectors
+p4_ladder.c:12:39: note: vectorized 1 loops in function.
+p4_ladder.c:12:112: note: ***** Analysis failed with vector mode VOID
+p4_ladder.c:22:103: missed: couldn't vectorize loop
+p4_ladder.c:22:103: missed: may need non-SLP handling
+p4_ladder.c:22:39: note: vectorized 0 loops in function.
+p4_ladder.c:22:138: note: ***** Analysis failed with vector mode V4SF
+p4_ladder.c:22:138: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+p4_ladder.c:23:30: missed: statement clobbers memory: rung0_k (a.20_1, b.21_2, c.22_3);
+p4_ladder.c:23:48: note: ***** Analysis failed with vector mode V2DI
+p4_ladder.c:23:48: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+p4_ladder.c:28:30: missed: statement clobbers memory: rung5_k (a.4_1, b.5_2, c.6_3, idx.7_4);
+p4_ladder.c:28:53: note: ***** Analysis failed with vector mode V2DI
+p4_ladder.c:28:53: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+p4_ladder.c:20:96: missed: couldn't vectorize loop
+p4_ladder.c:20:96: missed: may need non-SLP handling
+p4_ladder.c:20:40: note: vectorized 0 loops in function.
+p4_ladder.c:20:124: note: ***** Analysis failed with vector mode V4SF
+p4_ladder.c:20:124: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+p4_ladder.c:27:38: missed: statement clobbers memory: _4 = rung4_k.isra (a.8_1);
+p4_ladder.c:27:36: missed: not vectorized: volatile type: fsink ={v} _4;
+p4_ladder.c:27:56: note: ***** Analysis failed with vector mode V2DI
+p4_ladder.c:27:56: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+p4_ladder.c:18:82: optimized: loop vectorized using 16 byte vectors
+p4_ladder.c:18:39: note: vectorized 1 loops in function.
+p4_ladder.c:18:101: note: ***** Analysis succeeded with vector mode V4SF
+p4_ladder.c:18:101: note: SLPing BB part
+p4_ladder.c:18:101: note: Costing subgraph: 
+p4_ladder.c:18:101: note: node 0xb1a890098 (max_nunits=2, refcnt=1) vector(2) float
+p4_ladder.c:18:101: note: op template: *_13 = _14;
+p4_ladder.c:18:101: note: 	stmt 0 *_13 = _14;
+p4_ladder.c:18:101: note: 	stmt 1 *_7 = _64;
+p4_ladder.c:18:101: note: 	children 0xb1a890128
+p4_ladder.c:18:101: note: node 0xb1a890128 (max_nunits=2, refcnt=1) vector(2) float
+p4_ladder.c:18:101: note: op template: _14 = _8 + _12;
+p4_ladder.c:18:101: note: 	stmt 0 _14 = _8 + _12;
+p4_ladder.c:18:101: note: 	stmt 1 _64 = _18 + _62;
+p4_ladder.c:18:101: note: 	children 0xb1a8901b8 0xb1a890248
+p4_ladder.c:18:101: note: node 0xb1a8901b8 (max_nunits=2, refcnt=1) vector(2) float
+p4_ladder.c:18:101: note: op template: _8 = *_7;
+p4_ladder.c:18:101: note: 	stmt 0 _8 = *_7;
+p4_ladder.c:18:101: note: 	stmt 1 _18 = *_15;
+p4_ladder.c:18:101: note: node 0xb1a890248 (max_nunits=2, refcnt=1) vector(2) float
+p4_ladder.c:18:101: note: op template: _12 = *_11;
+p4_ladder.c:18:101: note: 	stmt 0 _12 = *_11;
+p4_ladder.c:18:101: note: 	stmt 1 _62 = *_61;
+p4_ladder.c:18:101: note: Cost model analysis: 
+p4_ladder.c:18:101: note: Cost model analysis for part in loop 0:
+  Vector cost: 4
+  Scalar cost: 8
+p4_ladder.c:18:101: note: Basic block will be vectorized using SLP
+p4_ladder.c:18:101: optimized: basic block part vectorized using 8 byte vectors
+p4_ladder.c:18:101: note: Vectorizing SLP tree:
+p4_ladder.c:18:101: note: node 0xb1a890098 (max_nunits=2, refcnt=1) vector(2) float
+p4_ladder.c:18:101: note: op template: *_13 = _14;
+p4_ladder.c:18:101: note: 	stmt 0 *_13 = _14;
+p4_ladder.c:18:101: note: 	stmt 1 *_7 = _64;
+p4_ladder.c:18:101: note: 	children 0xb1a890128
+p4_ladder.c:18:101: note: node 0xb1a890128 (max_nunits=2, refcnt=1) vector(2) float
+p4_ladder.c:18:101: note: op template: _14 = _8 + _12;
+p4_ladder.c:18:101: note: 	stmt 0 _14 = _8 + _12;
+p4_ladder.c:18:101: note: 	stmt 1 _64 = _18 + _62;
+p4_ladder.c:18:101: note: 	children 0xb1a8901b8 0xb1a890248
+p4_ladder.c:18:101: note: node 0xb1a8901b8 (max_nunits=2, refcnt=1) vector(2) float
+p4_ladder.c:18:101: note: op template: _8 = *_7;
+p4_ladder.c:18:101: note: 	stmt 0 _8 = *_7;
+p4_ladder.c:18:101: note: 	stmt 1 _18 = *_15;
+p4_ladder.c:18:101: note: node 0xb1a890248 (max_nunits=2, refcnt=1) vector(2) float
+p4_ladder.c:18:101: note: op template: _12 = *_11;
+p4_ladder.c:18:101: note: 	stmt 0 _12 = *_11;
+p4_ladder.c:18:101: note: 	stmt 1 _62 = *_61;
+p4_ladder.c:18:101: note: ------>vectorizing SLP node starting from: _8 = *_7;
+p4_ladder.c:18:101: note: transform load. ncopies = 1
+p4_ladder.c:18:101: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *_7
+p4_ladder.c:18:101: note: created vectp.123_3
+p4_ladder.c:18:101: note: add new stmt: vect__8.124_4 = MEM <vector(2) float> [(float *)vectp.123_3];
+p4_ladder.c:18:101: note: add new stmt: vectp.123_6 = vectp.123_3 + 4;
+p4_ladder.c:18:101: note: ------>vectorizing SLP node starting from: _12 = *_11;
+p4_ladder.c:18:101: note: transform load. ncopies = 1
+p4_ladder.c:18:101: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *_11
+p4_ladder.c:18:101: note: created vectp.126_10
+p4_ladder.c:18:101: note: add new stmt: vect__12.127_46 = MEM <vector(2) float> [(float *)vectp.126_10];
+p4_ladder.c:18:101: note: add new stmt: vectp.126_45 = vectp.126_10 + 4;
+p4_ladder.c:18:101: note: ------>vectorizing SLP node starting from: _14 = _8 + _12;
+p4_ladder.c:18:101: note: vect_is_simple_use: operand *_7, type of def: internal
+p4_ladder.c:18:101: note: vect_is_simple_use: operand *_11, type of def: internal
+p4_ladder.c:18:101: note: transform binary/unary operation.
+p4_ladder.c:18:101: note: add new stmt: vect__14.128_24 = vect__8.124_4 + vect__12.127_46;
+p4_ladder.c:18:101: note: ------>vectorizing SLP node starting from: *_13 = _14;
+p4_ladder.c:18:101: note: vect_is_simple_use: operand _8 + _12, type of def: internal
+p4_ladder.c:18:101: note: vect_is_simple_use: operand _18 + _62, type of def: internal
+p4_ladder.c:18:101: note: transform store. ncopies = 1
+p4_ladder.c:18:101: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *_13
+p4_ladder.c:18:101: note: created vectp.130_25
+p4_ladder.c:18:101: note: add new stmt: MEM <vector(2) float> [(float *)vectp.130_25] = vect__14.128_24;
+p4_ladder.c:18:101: note: vectorizing stmts using SLP.
+p4_ladder.c:18:101: note: ***** The result for vector mode V16QI would be the same
+p4_ladder.c:18:101: note: ***** The result for vector mode V8QI would be the same
+p4_ladder.c:18:101: note: ***** The result for vector mode V4HI would be the same
+p4_ladder.c:26:30: missed: statement clobbers memory: rung3_k.isra (a.11_1, b.12_2);
+p4_ladder.c:26:48: note: ***** Analysis failed with vector mode V2DI
+p4_ladder.c:26:48: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+p4_ladder.c:16:82: optimized: loop vectorized using 16 byte vectors
+p4_ladder.c:16:39: note: vectorized 1 loops in function.
+p4_ladder.c:16:116: note: ***** Analysis failed with vector mode VOID
+p4_ladder.c:25:30: missed: statement clobbers memory: rung2_k.isra (a.14_1, b.15_2);
+p4_ladder.c:25:48: note: ***** Analysis failed with vector mode V2DI
+p4_ladder.c:25:48: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+p4_ladder.c:14:82: missed: couldn't vectorize loop
+p4_ladder.c:14:100: missed: not vectorized, possible dependence between data-refs *_6 and *_12
+p4_ladder.c:14:39: note: vectorized 0 loops in function.
+p4_ladder.c:14:116: note: ***** Analysis failed with vector mode V4SF
+p4_ladder.c:14:116: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+p4_ladder.c:24:30: missed: statement clobbers memory: rung1_k.isra (a.17_1, b.18_2);
+p4_ladder.c:24:48: note: ***** Analysis failed with vector mode V2DI
+p4_ladder.c:24:48: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+p4_ladder.c:35:23: missed: couldn't vectorize loop
+bench.h:37:27: missed: statement clobbers memory: t_47 = malloc (120);
+bench.h:38:23: missed: couldn't vectorize loop
+bench.h:17:5: missed: statement clobbers memory: clock_gettime (4, &ts);
+p4_ladder.c:32:23: optimized: loop vectorized using 16 byte vectors
+p4_ladder.c:29:5: note: vectorized 1 loops in function.
+bench.h:23:5: missed: statement clobbers memory: pthread_set_qos_class_self_np (33, 0);
+p4_ladder.c:31:9: missed: statement clobbers memory: _1 = malloc (4194304);
+p4_ladder.c:31:28: missed: statement clobbers memory: _2 = malloc (4194304);
+p4_ladder.c:31:47: missed: statement clobbers memory: _3 = malloc (4194304);
+p4_ladder.c:31:68: missed: statement clobbers memory: _4 = malloc (4194304);
+p4_ladder.c:32:66: missed: statement clobbers memory: __builtin_memset (_3, 0, 4194304);
+p4_ladder.c:33:51: missed: not vectorized: more than one data ref in stmt: t = *lC6;
+p4_ladder.c:34:5: missed: statement clobbers memory: __builtin_puts (&"rung,ns_per_elem,q1,q3"[0]);
+bench.h:37:27: missed: statement clobbers memory: t_47 = malloc (120);
+bench.h:17:5: missed: statement clobbers memory: clock_gettime (4, &ts);
+bench.h:39:31: missed: statement clobbers memory: __asm__ __volatile__("" :  :  : "memory");
+bench.h:39:42: missed: statement clobbers memory: _11 (0B);
+bench.h:39:51: missed: statement clobbers memory: __asm__ __volatile__("" :  :  : "memory");
+bench.h:17:5: missed: statement clobbers memory: clock_gettime (4, &ts);
+bench.h:42:5: missed: statement clobbers memory: qsort (t_47, 15, 8, cmp_dbl);
+bench.h:44:5: missed: statement clobbers memory: free (t_47);
+p4_ladder.c:35:76: missed: statement clobbers memory: printf ("%s,%.4f,%.4f,%.4f\n", _12, _14, _16, _18);
+p4_ladder.c:29:5: note: ***** Analysis failed with vector mode V2DI
+p4_ladder.c:29:5: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI

@@ -1,0 +1,6 @@
+p4_ladder.c:12:82: optimized: loop vectorized using 16 byte vectors
+p4_ladder.c:20:96: optimized: loop vectorized using 16 byte vectors
+p4_ladder.c:18:82: optimized: loop vectorized using 16 byte vectors
+p4_ladder.c:18:101: optimized: basic block part vectorized using 8 byte vectors
+p4_ladder.c:16:82: optimized: loop vectorized using 16 byte vectors
+p4_ladder.c:32:23: optimized: loop vectorized using 16 byte vectors

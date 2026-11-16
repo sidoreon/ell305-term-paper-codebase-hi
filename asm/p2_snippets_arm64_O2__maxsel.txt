@@ -1,0 +1,4 @@
+maxsel:
+ cmp w1, w0
+ csel w0, w1, w0, ge
+ ret

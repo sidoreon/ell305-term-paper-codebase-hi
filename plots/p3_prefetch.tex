@@ -1,0 +1,6 @@
+\begin{tikzpicture}
+\begin{axis}[width=\textwidth, height=7cm, xlabel={prefetch distance $d$ (iterations ahead)}, ylabel={ns per element}, grid=major, ymin=0, xtick={0,8,16,24,32,48,64}]
+\addplot+[mark=*, thick, error bars/.cd, y dir=both, y explicit] coordinates {(0,85.294) +- (0,0.132) (1,4.902) +- (0,0.053) (2,4.872) +- (0,0.006) (4,4.869) +- (0,0.003) (8,4.943) +- (0,0.022) (16,4.955) +- (0,0.035) (24,4.957) +- (0,0.047) (32,4.937) +- (0,0.032) (48,4.930) +- (0,0.029) (64,4.943) +- (0,0.020)};
+\node[pin={[font=\small]0:{$d=1$: 4.9 ns per node}}] at (axis cs:1,4.902) {};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,3 @@
+fold:
+ mov eax, 58
+ ret

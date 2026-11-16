@@ -1,0 +1,10 @@
+div7_signed:
+ push rbp
+ mov rbp, rsp
+ mov dword ptr [rbp - 4], edi
+ mov eax, dword ptr [rbp - 4]
+ mov ecx, 7
+ cdq
+ idiv ecx
+ pop rbp
+ ret

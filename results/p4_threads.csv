@@ -1,0 +1,9 @@
+threads,mode,ms,q1,q3,sum
+1,private_partials,15.63,15.58,17.26,67108864
+2,private_partials,7.97,7.89,8.06,67108864
+4,private_partials,4.37,4.36,5.40,67108864
+8,private_partials,3.02,3.01,3.02,67108864
+1,shared_atomic,113.59,112.73,118.94,67108864
+2,shared_atomic,360.06,343.18,375.16,67108864
+4,shared_atomic,542.70,537.49,548.08,67108864
+8,shared_atomic,1252.80,1230.16,1306.63,67108864

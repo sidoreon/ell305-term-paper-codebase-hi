@@ -1,0 +1,4 @@
+variant,ns_per_elem,q1,q3
+plain,0.6469,0.6359,0.7318
+restrict,0.0976,0.0925,0.2263
+omp_simd,0.0921,0.0919,0.0922

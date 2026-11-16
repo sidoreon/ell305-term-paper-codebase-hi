@@ -1,0 +1,4 @@
+assoc_r:
+ addsd xmm1, xmm2
+ addsd xmm0, xmm1
+ ret

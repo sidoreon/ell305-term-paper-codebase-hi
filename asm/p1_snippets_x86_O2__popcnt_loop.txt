@@ -1,0 +1,10 @@
+popcnt_loop:
+ xor eax, eax
+ test edi, edi
+ je .LBB16_2
+ lea ecx, [rdi - 1]
+ inc eax
+ and ecx, edi
+ mov edi, ecx
+ jne .LBB16_1
+ ret

@@ -1,0 +1,4 @@
+assoc_l:
+ vaddsd xmm0, xmm1, xmm0
+ vaddsd xmm0, xmm0, xmm2
+ ret

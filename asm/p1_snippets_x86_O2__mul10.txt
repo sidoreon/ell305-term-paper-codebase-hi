@@ -1,0 +1,4 @@
+mul10:
+ add rdi, rdi
+ lea rax, [rdi + 4*rdi]
+ ret

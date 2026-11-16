@@ -1,0 +1,4 @@
+fma_c:
+ mulss xmm0, xmm1
+ addss xmm0, xmm2
+ ret

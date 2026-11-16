@@ -1,0 +1,8 @@
+fill:
+ cmp w1, 0
+ ble L36
+ uxtw x2, w1
+ mov w1, 0
+ b _memset
+L36:
+ ret

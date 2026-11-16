@@ -1,0 +1,6 @@
+popcnt_loop:
+ fmov s31, w0
+ cnt v31.8b, v31.8b
+ addv b31, v31.8b
+ fmov w0, s31
+ ret

@@ -1,0 +1,15 @@
+unroll1:
+ adrp x0, _a@PAGE
+ mov x1, 0
+ ldr x3, [x0, #_a@PAGEOFF]
+ adrp x0, _b@PAGE
+ ldr x2, [x0, #_b@PAGEOFF]
+L4:
+ ldr w0, [x3, x1]
+ add w0, w0, w0, lsl 1
+ add w0, w0, 1
+ str w0, [x2, x1]
+ add x1, x1, 4
+ cmp x1, 4194304
+ bne L4
+ ret

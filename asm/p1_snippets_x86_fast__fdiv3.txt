@@ -1,0 +1,3 @@
+fdiv3:
+ vmulss xmm0, xmm0, dword ptr [rip + .LCPI14_0]
+ ret

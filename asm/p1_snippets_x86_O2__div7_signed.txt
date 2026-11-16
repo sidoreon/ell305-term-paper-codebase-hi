@@ -1,0 +1,10 @@
+div7_signed:
+ movsxd rax, edi
+ imul rcx, rax, -1840700269
+ shr rcx, 32
+ add eax, ecx
+ mov ecx, eax
+ shr ecx, 31
+ sar eax, 2
+ add eax, ecx
+ ret

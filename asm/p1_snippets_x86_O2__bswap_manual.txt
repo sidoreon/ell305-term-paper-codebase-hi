@@ -1,0 +1,4 @@
+bswap_manual:
+ mov eax, edi
+ bswap eax
+ ret

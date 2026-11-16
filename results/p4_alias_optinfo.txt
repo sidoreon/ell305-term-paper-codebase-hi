@@ -1,0 +1,96 @@
+bench.h:32:20: note: ***** Analysis failed with vector mode V2DF
+bench.h:32:20: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DF
+p4_alias.c:10:41: optimized: loop vectorized using 16 byte vectors
+p4_alias.c:8:39: note: vectorized 1 loops in function.
+p4_alias.c:11:1: note: ***** Analysis failed with vector mode VOID
+p4_alias.c:14:32: missed: statement clobbers memory: omp_simd.constprop (x.2_1, y.3_2, z.4_3);
+p4_alias.c:14:54: note: ***** Analysis failed with vector mode V2DI
+p4_alias.c:14:54: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+p4_alias.c:7:140: optimized: loop vectorized using 16 byte vectors
+p4_alias.c:7:39: note: vectorized 1 loops in function.
+p4_alias.c:7:177: note: ***** Analysis failed with vector mode VOID
+p4_alias.c:13:32: missed: statement clobbers memory: restricted.constprop (x.6_1, y.7_2, z.8_3);
+p4_alias.c:13:56: note: ***** Analysis failed with vector mode V2DI
+p4_alias.c:13:56: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+p4_alias.c:6:102: missed: couldn't vectorize loop
+p4_alias.c:6:102: missed: would need a runtime alias check
+p4_alias.c:6:39: note: vectorized 0 loops in function.
+p4_alias.c:6:139: note: ***** Analysis failed with vector mode V4SF
+p4_alias.c:6:139: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+p4_alias.c:12:32: missed: statement clobbers memory: plain.constprop (x.9_1, y.10_2, z.11_3);
+p4_alias.c:12:51: note: ***** Analysis failed with vector mode V2DI
+p4_alias.c:12:51: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+bench.h:38:23: missed: couldn't vectorize loop
+bench.h:17:5: missed: statement clobbers memory: clock_gettime (4, &ts);
+bench.h:36:23: note: vectorized 0 loops in function.
+bench.h:37:27: missed: statement clobbers memory: t_3 = malloc (168);
+bench.h:17:5: missed: statement clobbers memory: clock_gettime (4, &ts);
+bench.h:39:31: missed: statement clobbers memory: __asm__ __volatile__("" :  :  : "memory");
+bench.h:39:42: missed: statement clobbers memory: fn_5(D) (0B);
+bench.h:39:51: missed: statement clobbers memory: __asm__ __volatile__("" :  :  : "memory");
+bench.h:17:5: missed: statement clobbers memory: clock_gettime (4, &ts);
+bench.h:42:5: missed: statement clobbers memory: qsort (t_3, 21, 8, cmp_dbl);
+bench.h:44:5: missed: statement clobbers memory: free (t_3);
+bench.h:45:12: note: ***** Analysis succeeded with vector mode V2DI
+bench.h:45:12: note: SLPing BB part
+bench.h:45:12: note: Costing subgraph: 
+bench.h:45:12: note: node 0x746900008 (max_nunits=2, refcnt=1) vector(2) double
+bench.h:45:12: note: op template: D.6709.med = _17;
+bench.h:45:12: note: 	stmt 0 D.6709.med = _17;
+bench.h:45:12: note: 	stmt 1 D.6709.min = _18;
+bench.h:45:12: note: 	stmt 2 D.6709.q1 = _23;
+bench.h:45:12: note: 	stmt 3 D.6709.q3 = _29;
+bench.h:45:12: note: 	children 0x746900098
+bench.h:45:12: note: node 0x746900098 (max_nunits=2, refcnt=1) vector(2) double
+bench.h:45:12: note: op template: _17 = MEM[(double *)t_3 + 80B];
+bench.h:45:12: note: 	stmt 0 _17 = MEM[(double *)t_3 + 80B];
+bench.h:45:12: note: 	stmt 1 _18 = *t_3;
+bench.h:45:12: note: 	stmt 2 _23 = MEM[(double *)t_3 + 40B];
+bench.h:45:12: note: 	stmt 3 _29 = MEM[(double *)t_3 + 120B];
+bench.h:45:12: note: 	load permutation { 10 0 5 15 }
+bench.h:45:12: note: Cost model analysis: 
+bench.h:45:12: note: Cost model analysis for part in loop 0:
+  Vector cost: 14
+  Scalar cost: 8
+bench.h:45:12: missed: not vectorized: vectorization is not profitable.
+bench.h:45:12: note: ***** The result for vector mode V16QI would be the same
+bench.h:45:12: note: ***** The result for vector mode V8QI would be the same
+bench.h:45:12: note: ***** The result for vector mode V4HI would be the same
+bench.h:45:12: note: ***** Re-trying analysis with vector mode V2SI
+bench.h:45:12: note: ***** Analysis succeeded with vector mode V2SI
+bench.h:45:12: note: SLPing BB part
+bench.h:45:12: note: Costing subgraph: 
+bench.h:45:12: note: node 0x746900008 (max_nunits=2, refcnt=1) vector(2) double
+bench.h:45:12: note: op template: D.6709.med = _17;
+bench.h:45:12: note: 	stmt 0 D.6709.med = _17;
+bench.h:45:12: note: 	stmt 1 D.6709.min = _18;
+bench.h:45:12: note: 	stmt 2 D.6709.q1 = _23;
+bench.h:45:12: note: 	stmt 3 D.6709.q3 = _29;
+bench.h:45:12: note: 	children 0x746900098
+bench.h:45:12: note: node 0x746900098 (max_nunits=2, refcnt=1) vector(2) double
+bench.h:45:12: note: op template: _17 = MEM[(double *)t_3 + 80B];
+bench.h:45:12: note: 	stmt 0 _17 = MEM[(double *)t_3 + 80B];
+bench.h:45:12: note: 	stmt 1 _18 = *t_3;
+bench.h:45:12: note: 	stmt 2 _23 = MEM[(double *)t_3 + 40B];
+bench.h:45:12: note: 	stmt 3 _29 = MEM[(double *)t_3 + 120B];
+bench.h:45:12: note: 	load permutation { 10 0 5 15 }
+bench.h:45:12: note: Cost model analysis: 
+bench.h:45:12: note: Cost model analysis for part in loop 0:
+  Vector cost: 14
+  Scalar cost: 8
+bench.h:45:12: missed: not vectorized: vectorization is not profitable.
+p4_alias.c:17:80: optimized: loop vectorized using 16 byte vectors
+p4_alias.c:15:5: note: vectorized 1 loops in function.
+bench.h:23:5: missed: statement clobbers memory: pthread_set_qos_class_self_np (33, 0);
+p4_alias.c:17:9: missed: statement clobbers memory: _1 = malloc (4194304);
+p4_alias.c:17:28: missed: statement clobbers memory: _2 = malloc (4194304);
+p4_alias.c:17:47: missed: statement clobbers memory: _3 = malloc (4194304);
+p4_alias.c:18:5: missed: statement clobbers memory: __builtin_puts (&"variant,ns_per_elem,q1,q3"[0]);
+p4_alias.c:19:17: missed: statement clobbers memory: s = bench_run.constprop (r_plain);
+p4_alias.c:19:47: missed: statement clobbers memory: printf ("plain,%.4f,%.4f,%.4f\n", _9, _10, _11);
+p4_alias.c:20:9: missed: statement clobbers memory: s = bench_run.constprop (r_restr);
+p4_alias.c:20:39: missed: statement clobbers memory: printf ("restrict,%.4f,%.4f,%.4f\n", _12, _13, _14);
+p4_alias.c:21:9: missed: statement clobbers memory: s = bench_run.constprop (r_omp);
+p4_alias.c:21:39: missed: statement clobbers memory: printf ("omp_simd,%.4f,%.4f,%.4f\n", _15, _16, _17);
+p4_alias.c:15:5: note: ***** Analysis failed with vector mode V2DI
+p4_alias.c:15:5: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI

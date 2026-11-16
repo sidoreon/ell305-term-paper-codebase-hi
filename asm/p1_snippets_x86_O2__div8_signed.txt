@@ -1,0 +1,6 @@
+div8_signed:
+ lea eax, [rdi + 7]
+ test edi, edi
+ cmovns eax, edi
+ sar eax, 3
+ ret

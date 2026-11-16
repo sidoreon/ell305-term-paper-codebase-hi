@@ -1,0 +1,9 @@
+div7_unsigned:
+ mov eax, edi
+ imul rax, rax, 613566757
+ shr rax, 32
+ sub edi, eax
+ shr edi
+ add eax, edi
+ shr eax, 2
+ ret

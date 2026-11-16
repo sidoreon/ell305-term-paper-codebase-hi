@@ -1,0 +1,7 @@
+rung,ns_per_elem,q1,q3
+rung0_none,0.6505,0.6359,0.7246
+rung1_true_d1,2.7235,2.4915,2.9346
+rung2_true_d8,0.6160,0.6044,0.6334
+rung3_anti_d1,0.2749,0.2747,0.2751
+rung4_reduction,0.6476,0.6449,0.6596
+rung5_indirect,0.3035,0.3021,0.3058

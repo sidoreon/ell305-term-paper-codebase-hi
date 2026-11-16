@@ -1,0 +1,5 @@
+load_use:
+ ldr x0, [x0]
+ add x0, x0, 1
+ lsl x0, x0, 1
+ ret

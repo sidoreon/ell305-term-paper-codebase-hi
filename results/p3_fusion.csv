@@ -1,0 +1,5 @@
+variant,ns_per_elem,q1,q3
+two_loops,0.4713,0.4678,0.5053
+fused,1.3009,1.2962,1.3143
+eight_streams,0.8249,0.8154,0.8370
+four_plus_four,1.1603,1.1576,1.1615

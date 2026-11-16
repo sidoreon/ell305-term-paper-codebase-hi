@@ -1,0 +1,3 @@
+trace,forwarding,penalty,instrs,cycles,cpi,data_stalls,control_stalls
+traces/pipe_block.txt,1,2,9,16,1.778,3,0
+traces/pipe_block_sched.txt,1,2,9,14,1.556,1,0

@@ -1,0 +1,20 @@
+sysctl:
+Apple M5
+10
+4
+6
+196608
+131072
+16777216
+65536
+6291456
+128
+16384
+17179869184
+ProductName:		macOS
+ProductVersion:		26.5.1
+BuildVersion:		25F80
+gcc-15 (Homebrew GCC 15.2.0) 15.2.0
+Apple clang version 17.0.0 (clang-1700.6.4.2)
+Python 3.11.9
+pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)

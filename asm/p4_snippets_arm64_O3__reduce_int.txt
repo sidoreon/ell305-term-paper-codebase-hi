@@ -1,0 +1,45 @@
+reduce_int:
+ cmp w1, 0
+ ble L21
+ sub w2, w1, #1
+ cmp w2, 2
+ bls L22
+ movi v31.4s, 0
+ mov x2, x0
+ lsr w3, w1, 2
+ add x3, x0, w3, uxtw 4
+L18:
+ ldr q30, [x2], 16
+ add v31.4s, v31.4s, v30.4s
+ cmp x3, x2
+ bne L18
+ addv s31, v31.4s
+ and w3, w1, -4
+ fmov w2, s31
+ cmp w1, w3
+ beq L15
+L17:
+ ldr w5, [x0, w3, uxtw 2]
+ add w4, w3, 1
+ add w2, w2, w5
+ cmp w1, w4
+ ble L15
+ add x0, x0, w3, uxtw 2
+ ldr w4, [x0, 4]
+ add w3, w3, 2
+ add w2, w2, w4
+ cmp w1, w3
+ ble L15
+ ldr w0, [x0, 8]
+ add w2, w2, w0
+L15:
+ mov w0, w2
+ ret
+L21:
+ mov w2, 0
+ mov w0, w2
+ ret
+L22:
+ mov w3, 0
+ mov w2, 0
+ b L17
